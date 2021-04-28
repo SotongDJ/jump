@@ -15,15 +15,15 @@
             if ((!url.includes("?"))||url.split("?").length<2) {
                 parameter = "";
             } else {
-                parameter = "?"+url.split("?")[1];
+                parameter = url.split("?")[1];
             };
-            function myFunction() {
-                window.location.href = jumpDict[parameter];
+            function myFunction(target) {
+                window.location.href = target;
             };
-            if (!(parameter == "")) {
+            if (Object.keys(jumpDict).includes(parameter)) {
                 document.getElementById("locationLink").href = jumpDict[parameter];
                 document.getElementById("locationLink").href = "click here if the redirection was failed";
-                setTimeout(myFunction, 2000);
+                setTimeout(myFunction(jumpDict[parameter]), 2000);
             };
         </script>
     </body>
