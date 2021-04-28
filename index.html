@@ -3,10 +3,11 @@
     <meta charset="UTF-8">
     <body>
         <h1 style="text-align: center;">Redirect to target location (2 seconds)</h1>
-        <div style="text-align: center;">No information will be collected on this intermediate webpage</div>
         <div style="text-align: center;"><a id="locationLink"></a></div>
+        <div style="text-align: center;">No information will be collected on this intermediate webpage. (<a href="https://github.com/SotongDJ/jump/">Source code</a>)</div>
         <script>
             url = window.location.href;
+            // blgwba: Bailingguo on WalkBell Award
             var jumpDict = {
                 "BLGWBA" : "https://walkbell-awards.com/vote?type=podcast&page=1&search=%E7%99%BE%E9%9D%88%E6%9E%9C",
                 "blgwba" : "https://walkbell-awards.com/vote?type=podcast&page=1&search=%E7%99%BE%E9%9D%88%E6%9E%9C"
@@ -22,7 +23,7 @@
             };
             if (Object.keys(jumpDict).includes(parameter)) {
                 document.getElementById("locationLink").href = jumpDict[parameter];
-                document.getElementById("locationLink").href = "click here if the redirection was failed";
+                document.getElementById("locationLink").innerText = "click here if the redirection was failed";
                 setTimeout(myFunction(jumpDict[parameter]), 2000);
             };
         </script>
