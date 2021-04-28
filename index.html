@@ -6,7 +6,7 @@
         <div style="text-align: center;">No information will be collected on this intermediate webpage</div>
         <div style="text-align: center;"><a id="locationLink"></a></div>
         <script>
-            url = window.location.href
+            url = window.location.href;
             var jumpDict = {
                 "BLGWBA" = "https://walkbell-awards.com/vote?type=podcast&page=1&search=%E7%99%BE%E9%9D%88%E6%9E%9C&id=60826ef3af75595f2977ccef",
                 "blgwba" = "https://walkbell-awards.com/vote?type=podcast&page=1&search=%E7%99%BE%E9%9D%88%E6%9E%9C&id=60826ef3af75595f2977ccef"
@@ -24,7 +24,7 @@
                 document.getElementById("locationLink").href = jumpDict[parameter];
                 document.getElementById("locationLink").href = "click here if the redirection was failed";
                 setTimeout(myFunction, 2000);
-            }
+            };
         </script>
     </body>
 </html>
