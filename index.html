@@ -9,7 +9,6 @@
             url = window.location.href;
             // blgwba: Bailingguo on WalkBell Award
             var jumpDict = {
-                "BLGWBA" : "https://walkbell-awards.com/vote?type=podcast&page=1&search=%E7%99%BE%E9%9D%88%E6%9E%9C",
                 "blgwba" : "https://walkbell-awards.com/vote?type=podcast&page=1&search=%E7%99%BE%E9%9D%88%E6%9E%9C",
                 "night" : "https://www.nasa.gov/connect/ebooks/earthatnight_detail.html"
             };
@@ -17,7 +16,7 @@
             if ((!url.includes("?"))||url.split("?").length<2) {
                 parameter = "";
             } else {
-                parameter = url.split("?")[1];
+                parameter = url.split("?")[1].toLowerCase();
             };
             function myFunction(target) {
                 window.location.href = target;
