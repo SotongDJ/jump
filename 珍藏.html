@@ -25,8 +25,8 @@
             };
             if (Object.keys(jumpDict).includes(parameter)) {
                 document.getElementById("title").innerText = jumpDict[parameter]['title'];
-                document.getElementById("content-title").innerText = "五秒後重新導向到目標網址: "+jumpDict[parameter]['url'];
-                document.getElementById("locationLink").innerText = "若重新導向目標失敗，請點此鏈接🔗前往"+jumpDict[parameter]['title'];
+                document.getElementById("content-title").innerText = "五秒後重新導向到目標："+jumpDict[parameter]['title'];
+                document.getElementById("locationLink").innerText = "若重新導向目標失敗，請點此鏈接🔗前往";
                 document.getElementById("locationLink").href = jumpDict[parameter]['url'];
                 setTimeout(myFunction(jumpDict[parameter]['url']), 5000);
             };
