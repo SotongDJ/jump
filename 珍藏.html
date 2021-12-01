@@ -2,9 +2,9 @@
 <html>
     <meta charset="UTF-8">
     <body>
-        <h1 style="text-align: center;" id="title">Jump to somewhere else~</h1>
+        <h1 style="text-align: center;" id="title">重新導向目標未定</h1>
         <div style="text-align: center;"><a id="locationLink"></a></div>
-        <div style="text-align: center;">No information will be collected on this intermediate webpage. (<a href="https://github.com/SotongDJ/jump/blob/main/index.html">Source code</a>)</div>
+        <div style="text-align: center;">此中轉網頁不會收集任何資訊（<a href="https://github.com/SotongDJ/jump/blob/main/%E7%8F%8D%E8%97%8F.html">網頁源碼</a>）</div>
         <script>
             url = window.location.href;
             // blgwba: Bailingguo on WalkBell Award
@@ -22,9 +22,9 @@
             };
             if (Object.keys(jumpDict).includes(parameter)) {
                 document.getElementById("locationLink").href = jumpDict[parameter];
-                document.getElementById("locationLink").innerText = "click here if the redirection was failed";
-                document.getElementById("title").innerText = "Redirect to target location (2 seconds)";
-                setTimeout(myFunction(jumpDict[parameter]), 2000);
+                document.getElementById("locationLink").innerText = "若重新導向目標失敗，請點此鏈接🔗前往";
+                document.getElementById("title").innerText = "五秒後重新導向到目標網址";
+                setTimeout(myFunction(jumpDict[parameter]), 5000);
             };
         </script>
     </body>
