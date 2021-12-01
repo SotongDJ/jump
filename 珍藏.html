@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
+    <title id="title">重新導向</title>
     <meta charset="UTF-8">
     <body>
-        <h1 style="text-align: center;" id="title">重新導向目標未定</h1>
+        <h1 style="text-align: center;" id="content-title">重新導向目標未定</h1>
         <div style="text-align: center;"><a id="locationLink"></a></div>
         <div style="text-align: center;">此中轉網頁不會收集任何資訊（<a href="https://github.com/SotongDJ/jump/blob/main/%E7%8F%8D%E8%97%8F.html">網頁源碼</a>）</div>
         <script>
             url = window.location.href;
-            // 百靈果官方網站
             var jumpDict = {
-                "%E7%99%BE%E9%9D%88%E6%9E%9C" : "https://bailingguonews.com/",
+                "%E7%99%BE%E9%9D%88%E6%9E%9C" : {
+                    "url" : "https://bailingguonews.com/",
+                    "title" : "百靈果官方網站"
+                },
             };
             var parameter = "";
             if ((!url.includes("?"))||url.split("?").length<2) {
@@ -21,10 +24,11 @@
                 window.location.href = target;
             };
             if (Object.keys(jumpDict).includes(parameter)) {
-                document.getElementById("locationLink").href = jumpDict[parameter];
-                document.getElementById("locationLink").innerText = "若重新導向目標失敗，請點此鏈接🔗前往";
-                document.getElementById("title").innerText = "五秒後重新導向到目標網址";
-                setTimeout(myFunction(jumpDict[parameter]), 5000);
+                document.getElementById("title").innerText = jumpDict[parameter]['title'];
+                document.getElementById("content-title").innerText = "五秒後重新導向到目標網址: "+jumpDict[parameter]['url'];
+                document.getElementById("locationLink").innerText = "若重新導向目標失敗，請點此鏈接🔗前往"+jumpDict[parameter]['title'];
+                document.getElementById("locationLink").href = jumpDict[parameter]['url'];
+                setTimeout(myFunction(jumpDict[parameter]['url']), 5000);
             };
         </script>
     </body>
