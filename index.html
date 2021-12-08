@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html>
+    <title id="title">Redirection</title>
     <meta charset="UTF-8">
     <body>
-        <h1 style="text-align: center;" id="title">Jump to somewhere else~</h1>
+        <h1 style="text-align: center;" id="content-title">Require target</h1>
         <div style="text-align: center;"><a id="locationLink"></a></div>
-        <div style="text-align: center;">No information will be collected on this intermediate webpage. (<a href="https://github.com/SotongDJ/jump/blob/main/index.html">Source code</a>)</div>
+        <div style="text-align: center;">No information will be collected on this intermediate webpage.（<a href="https://github.com/SotongDJ/jump/blob/main/%E7%8F%8D%E8%97%8F.html">網頁源碼</a>）</div>
         <script>
             url = window.location.href;
-            // blgwba: Bailingguo on WalkBell Award
             var jumpDict = {
-                "BLGWBA" : "https://walkbell-awards.com/vote?type=podcast&page=1&search=%E7%99%BE%E9%9D%88%E6%9E%9C",
-                "%E7%99%BE%E9%9D%88%E6%9E%9C" : "https://bailingguonews.com/",
-                "NIGHT" : "https://www.nasa.gov/connect/ebooks/earthatnight_detail.html"
+                "NIGHT" : {
+                    "url" : "https://www.nasa.gov/connect/ebooks/earthatnight_detail.html",
+                    "title" : "Earth at Night"
+                },
             };
             var parameter = "";
             if ((!url.includes("?"))||url.split("?").length<2) {
@@ -23,10 +24,11 @@
                 window.location.href = target;
             };
             if (Object.keys(jumpDict).includes(parameter)) {
-                document.getElementById("locationLink").href = jumpDict[parameter];
-                document.getElementById("locationLink").innerText = "click here if the redirection was failed";
-                document.getElementById("title").innerText = "Redirect to target location (2 seconds)";
-                setTimeout(myFunction(jumpDict[parameter]), 2000);
+                document.getElementById("title").innerText = jumpDict[parameter]['title'];
+                document.getElementById("content-title").innerText = "Redirect to target location ["+jumpDict[parameter]['title']+"] after 5 seconds";
+                document.getElementById("locationLink").innerText = "Click here 🔗 if the redirection was failed";
+                document.getElementById("locationLink").href = jumpDict[parameter]['url'];
+                setTimeout(myFunction(jumpDict[parameter]['url']), 5000);
             };
         </script>
     </body>
