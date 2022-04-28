@@ -28,11 +28,20 @@
                 window.location.href = target;
             };
             if (Object.keys(jumpDict).includes(parameter)) {
-                document.getElementById("title").innerText = jumpDict[parameter]['title'];
-                document.getElementById("content-title").innerText = "Redirect to target location ["+jumpDict[parameter]['title']+"] after 5 seconds";
+                document.getElementById("title").innerText = "Go to: "+jumpDict[parameter]['title'];
                 document.getElementById("locationLink").innerText = "Click here 🔗 if the redirection was failed";
                 document.getElementById("locationLink").href = jumpDict[parameter]['url'];
-                setTimeout(myFunction(jumpDict[parameter]['url']), 5000);
+                var left = 3;
+                var downloadTimer = setInterval(function(){
+                    if(left <= 0){
+                        clearInterval(downloadTimer);
+                        document.getElementById("content-title").innerText = "Redirect to target location ["+jumpDict[parameter]['url']+"]";
+                        myFunction(jumpDict[parameter]['url'])
+                    } else {
+                        document.getElementById("content-title").innerText = "Redirect to target location ["+jumpDict[parameter]['url']+"]after "+left+" seconds";
+                    }
+                    left -= 1;
+                }, 1000);
             };
         </script>
     </body>
