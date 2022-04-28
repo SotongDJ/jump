@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
-    <title id="title">Redirection</title>
+    <title id="title">Loading...</title>
     <meta charset="UTF-8">
     <body>
-        <h1 style="text-align: center;" id="content-title">Require target</h1>
+        <h1 style="text-align: center;" id="content-title">Loading...</h1>
         <div style="text-align: center;"><a id="locationLink"></a></div>
         <div style="text-align: center;">No information will be collected on this intermediate webpage.（<a href="https://github.com/SotongDJ/jump/blob/main/index.html">網頁源碼</a>）</div>
         <script>
@@ -42,6 +42,9 @@
                     }
                     left -= 1;
                 }, 1000);
+            } else {
+                document.getElementById("title").innerText = "Require target";
+                document.getElementById("locationLink").innerText = "Require target";
             };
         </script>
     </body>
