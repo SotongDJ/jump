@@ -32,7 +32,7 @@ var jumpDict = {
     },
     "CLOCK" : {
     "url" : "https://深海墨客.台灣/clock",
-    "title" : "Clock"
+    "title" : "Clock for E-Ink Display"
     }
 };
 var parameter = "";
@@ -46,15 +46,15 @@ function myFunction(target) {
 };
 if (Object.keys(jumpDict).includes(parameter)) {
     document.getElementById("title").innerText = "Go to: "+jumpDict[parameter]['title'];
-    document.getElementById("locationLink").innerText = "Click here 🔗 if the redirection was failed";
+    document.getElementById("locationLink").innerText = "Click here 🔗["+jumpDict[parameter]['url']+"] if the redirection was failed";
     document.getElementById("locationLink").href = jumpDict[parameter]['url'];
     var left = 3;
     var downloadTimer = setInterval(function(){
         if(left <= 0){
         clearInterval(downloadTimer);
-        document.getElementById("content-title").innerText = "Redirect to target location ["+jumpDict[parameter]['url']+"]";
+        document.getElementById("content-title").innerText = "Redirect to target location ["+jumpDict[parameter]['title']+"]";
         myFunction(jumpDict[parameter]['url']);
-        } else { document.getElementById("content-title").innerText = "Redirect to target location ["+jumpDict[parameter]['url']+"]after "+left+" seconds";}
+        } else { document.getElementById("content-title").innerText = "Redirect to target location ["+jumpDict[parameter]['title']+"] after "+left+" seconds";}
         left -= 1;
     }, 1000);
 } else {
