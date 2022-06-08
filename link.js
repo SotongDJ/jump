@@ -1,15 +1,3 @@
-let countdownDict = {
-1:{"en":"one second","hant":"一秒"},
-2:{"en":"two seconds","hant":"兩秒"},
-3:{"en":"three seconds","hant":"三秒"},
-4:{"en":"four seconds","hant":"四秒"},
-5:{"en":"five seconds","hant":"五秒"},
-}
-let infoDict = {
-"locationLink":{"en":"If redirection fails, please click this","hant":"🔗 若重新導向目標失敗，請點擊前往"},
-"content-start":{"en":"Redirect to target location: (after {})<br>{}","hant":"重新導向到目標：（{}後）<br>【{}】"},
-"content-end":{"en":"Redirect to target location<br>{}","hant":"重新導向到目標：<br>【{}】"}
-}
 var reverseShortDict = {
 "BLG":{"hant":["%E7%99%BE%E9%9D%88%E6%9E%9C"],"en":["BLG","BAILINGGUO"]},
 "2021GT":{"hant":["2021%E5%85%AC%E6%8A%95","%E5%85%AC%E6%8A%95"],"en":["2021GT"]},
