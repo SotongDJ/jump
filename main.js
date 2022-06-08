@@ -41,7 +41,7 @@ if (Object.keys(shortDict).includes(parameter)) {
  document.getElementById("title").innerText = "Go to: {}".format(jumpDict[targetKey][langStr]);
  document.getElementById("locationLink").innerHTML = infoDict["locationLink"][langStr];
  document.getElementById("locationLink").href = jumpDict[targetKey]['url'];
- var left = 3;
+ var left = 5;
  var downloadTimer = setInterval(function(){
   if(left <= 0){
    clearInterval(downloadTimer);
