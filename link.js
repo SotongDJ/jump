@@ -5,14 +5,6 @@ var reverseShortDict = {
 "RX":{"hant":["%E8%97%A5%E5%B1%80","%E5%BF%AB%E7%AF%A9"],"en":["RX","SELFTEST"]},
 "CLOCK":{"en":["EINK","CLOCK"]}
 };
-var shortDict = {};
-for (const targetKey in reverseShortDict) {
- for (const langKey in reverseShortDict[targetKey]) {
-  for (const shortKey of reverseShortDict[targetKey][langKey]) {
-   shortDict[shortKey] = {"lang":langKey,"key":targetKey};
-  }
- }
-};
 // "YOUTUBE": Object { lang: "en", key: "YT" }
 var jumpDict = {
 "BLG" : {

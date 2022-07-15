@@ -1,14 +1,19 @@
-//
 // uglifyjs go.js -o docs/go.js -c -m 
-//
 // reference: 
 //     https://stackoverflow.com/questions/4974238/javascript-equivalent-of-pythons-format-function/4974690#4974690
-//
 String.prototype.format = function () {
 var i = 0, args = arguments;
 return this.replace(/{}/g, function () {return typeof args[i] != 'undefined' ? args[i++] : '';});
 };
 //
+var shortDict = {};
+for (const targetKey in reverseShortDict) {
+ for (const langKey in reverseShortDict[targetKey]) {
+  for (const shortKey of reverseShortDict[targetKey][langKey]) {
+   shortDict[shortKey] = {"lang":langKey,"key":targetKey};
+  }
+ }
+};
 //
 let countdownDict = {
 1:{"en":"one second","hant":"一秒"},
@@ -41,7 +46,7 @@ if (Object.keys(shortDict).includes(parameter)) {
  document.getElementById("title").innerText = "Go to: {}".format(jumpDict[targetKey][langStr]);
  document.getElementById("locationLink").innerHTML = infoDict["locationLink"][langStr];
  document.getElementById("locationLink").href = jumpDict[targetKey]['url'];
- var left = 5;
+ var left = 2;
  var downloadTimer = setInterval(function(){
   if(left <= 0){
    clearInterval(downloadTimer);
